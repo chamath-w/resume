@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chamath Wijeratne — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Oswald:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f4efe6;
+      --ink: #1b1714;
+      --mid: #4a433c;
+      --copper: #b4532a;
+      --copper-deep: #8a3a1c;
+      --teal: #0e4f4f;
+      --teal-soft: #d7e4df;
+      --rule: #d4cbb8;
+      --white: #fffaf3;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: #2a2420;
+      color: var(--ink);
+      font-family: Commissioner, "Segoe UI", sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.33;
+      -webkit-font-smoothing: antialiased;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    .sheet {
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      margin: 18px auto;
+      background:
+        radial-gradient(1200px 400px at 100% -10%, rgba(180, 83, 42, 0.08), transparent 55%),
+        linear-gradient(180deg, #f7f2ea 0%, var(--paper) 28%);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      padding: 0;
+      position: relative;
+    }
+
+    .rail {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 7px;
+      background: linear-gradient(180deg, var(--copper) 0%, var(--teal) 100%);
+    }
+
+    .inner {
+      padding: 11mm 14mm 10mm 16mm;
+      height: 100%;
+      position: relative;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px 24px;
+      align-items: end;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .kicker {
+      font-family: Oswald, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-size: 8pt;
+      color: var(--copper);
+      margin-bottom: 4px;
+    }
+
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+      font-size: 30pt;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    .title {
+      display: block;
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--teal);
+      margin-top: 5px;
+    }
+
+    .meta {
+      text-align: right;
+      font-size: 8.5pt;
+      color: var(--mid);
+      line-height: 1.42;
+      padding-bottom: 2px;
+    }
+
+    .meta strong {
+      display: block;
+      font-weight: 700;
+      font-size: 9.4pt;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .meta a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    .lede {
+      margin: 9px 0 10px;
+      font-size: 10.4pt;
+      line-height: 1.36;
+      max-width: 54em;
+      color: var(--ink);
+    }
+
+    .lede em {
+      font-style: italic;
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 500;
+      color: var(--copper-deep);
+    }
+
+    .proof {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin: 0 0 11px;
+    }
+
+    .proof div {
+      background: var(--white);
+      border: 1px solid #e4d9c8;
+      border-top: 3px solid var(--copper);
+      padding: 7px 8px 8px;
+    }
+
+    .proof div:nth-child(2) { border-top-color: var(--teal); }
+    .proof div:nth-child(4) { border-top-color: var(--teal); }
+
+    .proof b {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 15pt;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    .proof span {
+      display: block;
+      margin-top: 4px;
+      font-family: Oswald, sans-serif;
+      font-weight: 500;
+      font-size: 7.6pt;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.22;
+      color: var(--mid);
+    }
+
+    .section-label {
+      font-family: Oswald, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 8.2pt;
+      color: var(--teal);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 3px;
+      margin: 9px 0 7px;
+    }
+
+    .role { margin-bottom: 7px; }
+
+    .role-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: baseline;
+    }
+
+    .role-head h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 11.2pt;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+    }
+
+    .dates {
+      font-family: Oswald, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      font-size: 8.6pt;
+      color: var(--copper);
+      white-space: nowrap;
+    }
+
+    .org {
+      font-size: 9pt;
+      color: var(--mid);
+      margin: 0 0 3px;
+    }
+
+    ul { padding-left: 1.05em; }
+
+    li { margin-bottom: 2.3px; }
+    li::marker { color: var(--copper); }
+    li b { font-weight: 700; color: var(--ink); }
+
+    .plants {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin: 8px 0 0;
+    }
+
+    .plant {
+      padding: 7px 8px 8px;
+      background: var(--teal);
+      color: #f4efe6;
+    }
+
+    .plant b {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 9.4pt;
+      font-weight: 600;
+      line-height: 1.15;
+      color: #fffaf3;
+    }
+
+    .plant span {
+      display: block;
+      margin-top: 3px;
+      font-size: 7.8pt;
+      color: #c9ddd8;
+    }
+
+    .early .org { margin-bottom: 2px; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 18px;
+    }
+
+    .edu p { margin-bottom: 5px; }
+    .edu strong { display: block; font-weight: 700; }
+    .edu span { color: var(--mid); font-size: 9pt; }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .chips i {
+      font-style: normal;
+      background: var(--white);
+      border: 1px solid #dccfb8;
+      color: var(--teal);
+      padding: 2px 7px 3px;
+      font-size: 8pt;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .pub { font-size: 9pt; }
+    .pub span { color: var(--mid); }
+
+    @page { size: A4; margin: 0; }
+
+    @media print {
+      html, body { background: #fff; }
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+      }
+      .sheet:last-of-type { page-break-after: auto; }
+      a { color: var(--teal); }
+    }
+
+    @media screen {
+      body { padding: 28px 0 56px; }
+      .sheet {
+        animation: rise 0.7s ease both;
+      }
+      .sheet:nth-of-type(2) { animation-delay: 0.08s; }
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="sheet">
+    <div class="rail" aria-hidden="true"></div>
+    <div class="inner">
+      <header>
+        <div>
+          <p class="kicker">SCADA · Plant control · Grid-scale storage</p>
+          <h1>Chamath Wijeratne</h1>
+          <span class="title">Sr Staff Software Development Engineer — SCADA</span>
+        </div>
+        <div class="meta">
+          <strong>Auckland, New Zealand</strong>
+          +64 29 043 22342<br />
+          <a href="mailto:chamath.wijeratne@gmail.com">chamath.wijeratne@gmail.com</a><br />
+          <a href="https://www.linkedin.com/in/chamathw">linkedin.com/in/chamathw</a>
+        </div>
+      </header>
+
+      <p class="lede">I commission Tesla’s grid-scale batteries so they settle and stay controllable — SCADA, plant control, and software that earns its keep in the field. <em>From live 132 kV substations in Sydney to Megapack plants worldwide.</em></p>
+
+      <div class="proof" aria-label="Key highlights">
+        <div><b>10×</b><span>SCADA productivity on APAC EPC scope</span></div>
+        <div><b>200 MW</b><span>Collie 1 — first utility-scale BESS in the WEM</span></div>
+        <div><b>~100 ms</b><span>Voltage control on Transgrid 132 kV</span></div>
+        <div><b>~AUD 152M</b><span>Inner-Sydney 132 kV program, ~480 MVA</span></div>
+      </div>
+
+      <p class="section-label">Experience</p>
+
+      <div class="role">
+        <div class="role-head">
+          <h2>Sr Staff Software Development Engineer — Eng (SCADA)</h2>
+          <p class="dates">May 2026 – Present</p>
+        </div>
+        <p class="org">Tesla Energy · Auckland · global Megapack fleet</p>
+        <ul>
+          <li><b>Technical specialist</b> for industrial SCADA and controls software on Tesla’s utility-scale Megapack fleet (plants typically tens to hundreds of MW).</li>
+          <li><b>IEC 61131-3 / CODESYS</b> lead for plant and balance-of-plant control: validation, automation, redundancy, and signed artifacts in enterprise CI/CD.</li>
+          <li><b>Cross-org alignment</b> with firmware, product security, and regional SCADA; mentor engineers and supervise senior SCADA automation.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-head">
+          <h2>Staff SCADA and Applications Engineer</h2>
+          <p class="dates">Aug 2022 – May 2026</p>
+        </div>
+        <p class="org">Tesla Energy · Auckland</p>
+        <ul>
+          <li><b>Remote Intelligent Gateway:</b> productized a utility-scale BESS SCADA gateway that delivered about <b>10× productivity</b> on APAC EPC SCADA scope; adopted as a standard offering, then expanded globally.</li>
+          <li><b>Collie 1 (200 MW / 800 MWh):</b> lead SCADA engineer, first utility-scale BESS in the WEM; SCADA ahead of schedule, practical completion about two months early.</li>
+          <li><b>Riverina / Darlington Point (150 MW / 300 MWh):</b> ~100 ms voltage control across 330 / 132 kV using SEL Mirrored Bits; Rust SQL-to-Modbus ETL that unblocked a multi-million-dollar customer milestone.</li>
+          <li><b>OT-secure SCADA</b> against Australian critical-infrastructure expectations (AESCSF-oriented, SOCI-related); FAT / SAT / commissioning across BESS and substation interfaces.</li>
+          <li><b>Global SEL RTAC templates;</b> SAT and market-interface testing with grid operators; covered multi-week APAC SCADA leadership gaps with no customer-facing incidents.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-head">
+          <h2>Staff Sales Engineer</h2>
+          <p class="dates">Aug 2020 – Jul 2022</p>
+        </div>
+        <p class="org">Tesla Energy · Auckland</p>
+        <ul>
+          <li><b>Dual-redundant SEL RTAC</b> plant controllers in IEC 61131-3 structured text for AEMO requirements, including Transgrid Wallgrove / Sydney West (~50 MW / 75 MWh).</li>
+          <li><b>Data-diode IT–OT</b> communications for cyber-sensitive transmission utilities; operator HMIs on AVEVA Edge (high-performance / ECAM-inspired).</li>
+          <li><b>APAC VPP lead</b> for infrastructure and API integration; cybersecurity integration of BESS projects with Australian transmission utilities.</li>
+        </ul>
+      </div>
+
+      <div class="plants" aria-label="Selected plants">
+        <div class="plant"><b>Victorian Big Battery</b><span>300 MW / 450 MWh · VIC</span></div>
+        <div class="plant"><b>Collie 1</b><span>200 MW / 800 MWh · WEM first</span></div>
+        <div class="plant"><b>Riverina / Darlington Pt</b><span>150 MW / 300 MWh · 132 kV</span></div>
+        <div class="plant"><b>Hornsdale Power Reserve</b><span>100 MW / 129 MWh · SA</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="sheet">
+    <div class="rail" aria-hidden="true"></div>
+    <div class="inner">
+      <p class="section-label" style="margin-top:0">Experience continued</p>
+
+      <div class="role">
+        <div class="role-head">
+          <h2>Senior Engineer</h2>
+          <p class="dates">Mar 2017 – Aug 2020</p>
+        </div>
+        <p class="org">Tesla Energy · Auckland</p>
+        <ul>
+          <li><b>APAC technical lead</b> for microgrid and storage applications — community through island and C&amp;I BESS (~1–7 MW / 2–22 MWh) plus larger utility studies (~50 MW / 100 MWh into an existing 120 MW plant).</li>
+          <li><b>Hornsdale (100 MW / 129 MWh)</b> and Lake Bonney (25 MW / 52 MWh): client electrical / BOP engineering and commissioning.</li>
+          <li><b>DER / VPP APIs</b> including the SA VPP (~1,000 homes) and software lead for SA Power Networks Grid of the Future; mentored interns and junior engineers.</li>
+        </ul>
+      </div>
+
+      <div class="role early">
+        <div class="role-head">
+          <h2>Project Manager</h2>
+          <p class="dates">Aug 2016 – Mar 2017</p>
+        </div>
+        <p class="org">Downer · New Zealand</p>
+        <ul>
+          <li><b>Waihi 33/11 kV</b> switchgear upgrade and 11 kV network augmentation; LV–11 kV distribution upgrades including an 11 kV / 415 V 600 kVA substation refurbishment.</li>
+        </ul>
+      </div>
+
+      <div class="role early">
+        <div class="role-head">
+          <h2>Project Manager, then Project Engineer and Graduate Engineer</h2>
+          <p class="dates">Mar 2008 – Aug 2016</p>
+        </div>
+        <p class="org">Ausgrid · Sydney · 8 years 6 months</p>
+        <ul>
+          <li><b>Five stations, ~480 MVA, ~AUD 152M:</b> live inner-Sydney 132 kV brownfield program (2011–2016), including Canterbury 132/33 kV 194 MVA (~AUD 54M) outdoor-to-indoor GIS rebuild.</li>
+          <li><b>Commissioning system</b> so one superintendent could supervise multi-site energisation of ~AUD 300M of sub-transmission assets under tight outage windows.</li>
+          <li><b>Earlier:</b> acting PM / project engineer on Kurnell 132/33 kV GIS and Port Botany 33/11 kV greenfield zone; graduate rotations through major projects, network pricing, and projects development.</li>
+        </ul>
+      </div>
+
+      <div class="role early">
+        <div class="role-head">
+          <h2>Graduate Electrical Engineer</h2>
+          <p class="dates">Apr 2007 – Feb 2008</p>
+        </div>
+        <p class="org">Ampcontrol · Greater Newcastle, Australia</p>
+        <ul>
+          <li><b>11 kV / 1.1 kV (~1 MVA)</b> mining substations and switchboards (~AUD 200–500k) from specification to delivery.</li>
+        </ul>
+      </div>
+
+      <div class="role early">
+        <div class="role-head">
+          <h2>R&amp;D and development engineering</h2>
+          <p class="dates">2003 – 2007</p>
+        </div>
+        <p class="org">University of Waikato · University of Auckland · EmbeddedFusion</p>
+        <ul>
+          <li><b>IEEE Sensors 2005:</b> mixed-signal “smart pebble” inertial tracker for riverbed sediment transport; embedded sensing and DSP.</li>
+        </ul>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <p class="section-label">Education</p>
+          <div class="edu">
+            <p>
+              <strong>Master of Engineering Science (Energy Systems)</strong>
+              <span>University of New South Wales · 2008 – 2012</span>
+            </p>
+            <p>
+              <strong>Bachelor of Engineering (Hons, First Class) — Electrical &amp; Electronic</strong>
+              <span>University of Auckland · 2001 – 2005</span>
+            </p>
+            <p>
+              <strong>Bachelor of Commerce — Finance</strong>
+              <span>University of Auckland · 2001 – 2005</span>
+            </p>
+            <p>
+              <strong>Diploma of Project Management</strong>
+              <span>UNE Partnerships · 2010 – 2011</span>
+            </p>
+          </div>
+
+          <p class="section-label">Publication</p>
+          <p class="pub">Kularatna, Wijeratne, Melville. <em>Mixed signal approach for rapid prototyping of a compact smart pebble for sediment transport monitoring in riverbeds.</em> <span>IEEE Sensors 2005. DOI 10.1109/ICSENS.2005.1597903.</span></p>
+        </div>
+
+        <div>
+          <p class="section-label">Registration</p>
+          <div class="edu">
+            <p>
+              <strong>Chartered Professional Engineer (Electrical)</strong>
+              <span>Engineers Australia · 2014 – present</span>
+            </p>
+            <p>
+              <strong>National Engineering Register (Electrical)</strong>
+              <span>Engineers Australia · NER 3327842</span>
+            </p>
+            <p>
+              <strong>Registered Professional Engineer (Victoria)</strong>
+              <span>PE0009387 · granted 2023, renewed 2026</span>
+            </p>
+            <p>
+              <strong>RPEQ / BPEQ</strong>
+              <span>Queensland professional engineer registration</span>
+            </p>
+          </div>
+
+          <p class="section-label">Core stack</p>
+          <div class="chips">
+            <i>SCADA</i><i>IEC 61131-3</i><i>CODESYS</i><i>SEL RTAC</i>
+            <i>DNP3</i><i>Modbus</i><i>IEC 61850</i><i>AVEVA Edge</i>
+            <i>Rust</i><i>Python</i><i>CI/CD</i><i>OT cybersecurity</i>
+            <i>BESS plant control</i><i>Commissioning</i><i>FAT / SAT</i>
+            <i>132 kV substations</i><i>VPP / DER APIs</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</body>
+</html>
